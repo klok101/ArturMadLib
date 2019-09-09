@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">ArturMadLib</string>
+    <string name="app_name">Artur_MadLib</string>
+    <string name="et1">Noun</string>
+    <string name="et2">Noun</string>
+    <string name="et3">Adjective</string>
+    <string name="et4">Adjective</string>
+    <string name="et5">Verb</string>
+    <string name="et6">Place</string>
+    <string name="et7">Location</string>
+    <string name="et8">Thing</string>
 </resources>
