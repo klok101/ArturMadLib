@@ -35,7 +35,8 @@
         android:layout_marginTop="200dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_media_ff" />
+        app:srcCompat="@android:drawable/ic_media_ff"
+        android:onClick="goBack"/>
 
     <TextView
         android:id="@+id/textView"
@@ -43,9 +44,22 @@
         android:layout_height="150dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="207dp"
-        android:text="Click arrow and drag it to the Right to go back!"
+        android:text="Click arrow and drag it to the Right to go back! (or just click it)"
         android:textAlignment="center"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="20dp"
+        android:onClick="shareInfo"
+        android:src="@android:drawable/ic_menu_share"
+        android:tint="#FF0000"
+        app:layout_constraintEnd_toStartOf="@+id/info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

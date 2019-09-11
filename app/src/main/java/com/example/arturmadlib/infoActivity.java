@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class infoActivity extends AppCompatActivity {
@@ -19,6 +21,7 @@ public class infoActivity extends AppCompatActivity {
     public static final String MY_ANIMAL = "[animal]";
     public static final String MY_VERB = "[verb]";
     public static final String MY_DATE = "[date]";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +42,7 @@ public class infoActivity extends AppCompatActivity {
         String myVerb = intent.getStringExtra(MY_VERB);
 
         String strToDisplay = myName + " is really " + myAdj + " because all he does is " + myVerb + " all day. ";
-        strToDisplay += "Even though " + myName + " literally has 0 friends, his favorite holiday is here, " + myDate + "! ";
+        strToDisplay += "Even though " + myName + " literally has 0 friends, but his favorite holiday is here, " + myDate + "! ";
         strToDisplay += "Last year, he got a " + myNun + " as his only present from his parents. ";
         strToDisplay += "In the morning, " + myName + " got out of his bed and went to the " + myRoom + " to open his present. ";
         strToDisplay += "There was no present though, but behind the " + myNoun2 + " in the kitchen, there was a small " + myBp +  " sticking out of a box. " ;
@@ -48,4 +51,29 @@ public class infoActivity extends AppCompatActivity {
                 TextView str = (TextView) findViewById(R.id.info);
         str.setText(strToDisplay);
     }
+
+    public void shareInfo(View v){
+
+        TextView display = (TextView) findViewById(R.id.info);
+
+        String displayStr = display.getText().toString();
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, displayStr);
+        String chooserTitle = "Choose a cool app to send this story to!";
+        //String chooserTitle = getString(R.string.chooser);
+        Intent chosenIntent = Intent.createChooser(intent,chooserTitle);
+        startActivity(chosenIntent);
+
+    }
+
+    public void goBack(View v){
+
+        Intent intent = new Intent(this,MainActivity.class);
+
+        startActivity(intent);
+
+    }
+
 }

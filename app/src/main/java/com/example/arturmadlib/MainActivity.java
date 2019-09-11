@@ -63,9 +63,25 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra(infoActivity.MY_VERB, verbStr);
             intent.putExtra(infoActivity.MY_DATE, dateStr);
 
+            myName.setText("");
+            myNumber.setText("");
+            myCountry.setText("");
+            myNoun.setText("");
+            myRoom.setText("");
+            myAdj.setText("");
+            myNoun2.setText("");
+            myAnimal.setText("");
+            myBp.setText("");
+            myVerb.setText("");
+            myDate.setText("");
+
             startActivity(intent);
 
+
+
         }
+
+
 
     }
 
